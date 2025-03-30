@@ -1,0 +1,14 @@
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+*.code-workspace
+
+# pre-commit
+.pre-commit-config.yaml
+
+__pycache__
+*.egg-info
