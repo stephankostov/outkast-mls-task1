@@ -33,6 +33,8 @@ in
     echo "GLIBC version: $(ldd --version | head -n1)"
     echo "CUDA version: ${pkgs.cudaPackages_12_4.cudatoolkit.version}"
     . .devenv/state/venv/bin/activate
+    uv sync
+    uv pip install -e .
     echo "~ UV VENV ENVIRONMENT ACTIVATED ~"
     echo "Python path: $(which python)"
     echo "GLIBC version: $(ldd --version | head -n1)"
