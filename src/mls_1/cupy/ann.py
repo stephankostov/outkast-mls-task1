@@ -20,21 +20,11 @@ def ann(datapoints, labels, cluster_centroids, target_vector, k, distance_metric
     return ann_idxs
 
 def ann_full(datapoints, target_vector, k, distance_metric='l2', max_iter=100, tol=1e-9):
-    """
-    A[N, D]: A collection of vectors
-    X: A specified vector
-    K: Top K
-    """
     cluster_centroids, labels = kmeans(datapoints, k, distance_metric=distance_metric, max_iter=max_iter, tol=tol)
     ann_idxs = ann(datapoints, labels, cluster_centroids, target_vector, k, distance_metric)
     return ann_idxs
 
 def ann_stream(datapoints,  labels, cluster_centroids, target_vector, k, distance_metric='l2'):
-    """
-    A[N, D]: A collection of vectors
-    X: A specified vector
-    K: Top K
-    """
 
     original_idxs = cp.arange(datapoints.shape[0])
 
@@ -58,12 +48,7 @@ def ann_stream(datapoints,  labels, cluster_centroids, target_vector, k, distanc
     return ann_idxs
 
 def ann_full_stream(datapoints, target_vector, k, distance_metric='l2', max_iter=100, tol=1e-9):
-    """
-    A[N, D]: A collection of vectors
-    X: A specified vector
-    K: Top K
-    """
+
     cluster_centroids, labels = kmeans(datapoints, k, distance_metric=distance_metric, max_iter=max_iter, tol=tol)
     ann_idxs = ann_stream(datapoints, labels, cluster_centroids, target_vector, k, distance_metric)
     return ann_idxs
-# def ann_full_stream(datapoints, target_vector, k, distance_metric='l2', max_iter=100, tol=1e-9):
