@@ -1,6 +1,6 @@
 # Devenv
-.devenv*
 devenv*
+.devenv*
 
 # direnv
 .envrc
