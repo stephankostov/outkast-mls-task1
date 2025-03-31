@@ -55,9 +55,8 @@ def test_ann_threshold(datapoints, target_vector, k, distance_metric, **kwargs):
     knn_idxs = knn_idxs.get()
 
     recall_rate = np.sum(np.isin(ann_idxs, knn_idxs)) / ann_idxs.shape[0]
-    print(f"Recall rate: {recall_rate}")
-    if recall_rate < 0.7:
-        print(f"WARNING: Recall rate is below threshold:\n{recall_rate}, {knn_idxs.squeeze()} vs {ann_idxs.squeeze()}")
+    print(f"Recall rate: {recall_rate}; {knn_idxs.squeeze()} vs {ann_idxs.squeeze()}")
+    if recall_rate < 0.7: print(f"WARNING: Recall rate is below threshold.")
 
 def test_ann_full_stream(datapoints, target_vector, k, distance_metric, **kwargs):
 
