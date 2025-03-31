@@ -1,8 +1,9 @@
 # Devenv
 .devenv*
-devenv.local.nix
+devenv*
 
 # direnv
+.envrc
 .direnv
 
 *.code-workspace
