@@ -13,6 +13,3 @@ devenv*
 
 __pycache__
 *.egg-info
-
-devenv*
-.envrc
