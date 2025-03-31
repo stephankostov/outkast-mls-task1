@@ -13,5 +13,5 @@ devenv.local.nix
 __pycache__
 *.egg-info
 
+devenv*
 .envrc
-.devenv*
