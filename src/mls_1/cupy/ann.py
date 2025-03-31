@@ -64,7 +64,6 @@ def ann_full_stream(datapoints, target_vector, k, distance_metric='l2', max_iter
     K: Top K
     """
     cluster_centroids, labels = kmeans(datapoints, k, distance_metric=distance_metric, max_iter=max_iter, tol=tol)
-    target_label = cp.argmin(distance_function_ref[distance_metric](target_vector, cluster_centroids))
-    ann_idxs = ann(datapoints, labels, cluster_centroids, target_vector, target_label, k, distance_metric)
+    ann_idxs = ann_stream(datapoints, labels, cluster_centroids, target_vector, k, distance_metric)
     return ann_idxs
 # def ann_full_stream(datapoints, target_vector, k, distance_metric='l2', max_iter=100, tol=1e-9):
